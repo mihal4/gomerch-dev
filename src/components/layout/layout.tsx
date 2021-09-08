@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useRecoilState } from "recoil";
 import { ThemeProvider } from "styled-components";
-import { MenuStates, TransformStates } from "../../enums/menu";
+import { MenuStates } from "../../enums/menu";
 import { menuState } from "../../store/model";
 import { ButtonMenu, Header } from "../header/header-styled";
 import { Main } from "../main/main-styled";
@@ -10,17 +10,13 @@ import { Container } from "./layout-styled";
 
 export function Layout() {
   const [menu, setMenu] = useRecoilState(menuState);
-  const [transform, setTransform] = useState(TransformStates.RIGHT);
+  const [transform, setTransform] = useState(0);
 
   const menuChange = () => {
     setMenu((prevState) =>
       prevState === MenuStates.ON ? MenuStates.OFF : MenuStates.ON
     );
-    setTransform((prevState) =>
-      prevState === TransformStates.RIGHT
-        ? TransformStates.LEFT
-        : TransformStates.RIGHT
-    );
+    setTransform(menu === MenuStates.ON ? -100 : 0);
   };
 
   const theme = {
