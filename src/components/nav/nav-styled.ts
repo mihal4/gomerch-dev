@@ -6,7 +6,7 @@ export const Nav = styled.nav`
   left: 0px;
   bottom: 0px;
   width: 200px;
-  transform: translateX(0%);
+  transform: translateX(${(props) => props.theme.transform}%);
   transition: transform 300ms ease-in-out 0s;
   background-color: yellow;
 `;
