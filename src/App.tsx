@@ -1,15 +1,20 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
 import { ButtonMenu, Header } from "./components/header/header";
+import { Container } from "./components/layout/layout";
+import { Nav, Text } from "./components/nav/nav";
+
+import "./App.css";
 
 function App() {
   return (
-    <div>
+    <Container>
       <Header>
         <ButtonMenu>menu</ButtonMenu>
       </Header>
-    </div>
+      <Nav>
+        <Text>on</Text>
+      </Nav>
+    </Container>
   );
 }
 
